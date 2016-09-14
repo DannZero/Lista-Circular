@@ -20,13 +20,13 @@ ListaCircular::ListaCircular(int dato)
 
 bool ListaCircular::isEmpty()
 {
-	return (this->h == NULL && this->t = NULL);
+	return (this->h == NULL && this->t == NULL);
 }
 
 bool ListaCircular::vaciar()
 {
 	Nodo *aux = h;
-	while (!this->t->getNext() == NULL)
+	while (!this->t->getNext() == 0)
 	{
 		h = NULL;
 		h = aux->getNext();
@@ -44,7 +44,7 @@ void ListaCircular::show()
 	{
 		cout << aux->getDato() << endl;
 	}
-	cout << aux->getDato() << endl;
+	cout << this->t->getDato() << endl;
 }
 
 void ListaCircular::addInicio(int dato)
@@ -67,10 +67,10 @@ void ListaCircular::addFinal(int dato)
 	}
 	else
 	{
-		this->t = setSig(n);
+		this->t->setNext(n);
 	}
 	this->t = n;
-	this->t->setSig(h);
+	this->t->setNext(h);
 }
 
 /**
@@ -88,8 +88,8 @@ void ListaCircular::addAt(int dato, int ref)
 		{
 			if (aux->getNext() == this->t || aux->getNext() == this->h)
 			{
-				cout << "El tamaño de la lista es menor, se agregará al final..." << std:endl;
-				this.addFinal(dato);
+				cout << "El tamaño de la lista es menor, se agregará al final..." << endl;
+				this->addFinal(dato);
 				return;
 			}
 			aux = aux->getNext();
@@ -99,7 +99,7 @@ void ListaCircular::addAt(int dato, int ref)
 		return;
 	}
 	cout << "La lista está vacía, se agregará el dato al inicio..." << endl;
-	this.addInicio(dato);
+	this->addInicio(dato);
 }
 
 int ListaCircular::popInicio()
@@ -107,6 +107,6 @@ int ListaCircular::popInicio()
 	if (this->isEmpty())
 	{
 		cout << "La lista está vacía." << endl;
-		return NULL;
+		return 0;
 	}
 }

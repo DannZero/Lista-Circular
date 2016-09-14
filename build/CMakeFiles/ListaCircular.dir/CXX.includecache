@@ -11,6 +11,8 @@ Nodo.h
 ../include/Nodo.h
 
 ../include/Nodo.h
+iostream
+-
 
 /home/daniel/Documentos/Algoritmos y Estructuras de Datos/ListaCircular/src/ListaCircular.cpp
 ListaCircular.h
@@ -21,8 +23,6 @@ Nodo.h
 /home/daniel/Documentos/Algoritmos y Estructuras de Datos/ListaCircular/src/Nodo.h
 
 /home/daniel/Documentos/Algoritmos y Estructuras de Datos/ListaCircular/src/main.cpp
-iostream
--
 ListaCircular.h
 /home/daniel/Documentos/Algoritmos y Estructuras de Datos/ListaCircular/src/ListaCircular.h
 

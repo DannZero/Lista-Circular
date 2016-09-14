@@ -2,6 +2,8 @@
  *	Autor: Daniel Ponce de León Súchil
  */
 
+#include <iostream>
+
 class Nodo
 {
 public:
