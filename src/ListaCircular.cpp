@@ -114,3 +114,27 @@ int ListaCircular::popInicio()
 	this->t->setNext(this->h);
 	return dato;
 }
+
+int ListaCircular::popFinal()
+{
+	if (this->isEmpty())
+	{
+		cout << "La lista está vacía." << endl;
+		return 0;
+	}
+	int dato = this->t->getDato();
+	if (this->h == this->t)
+	{
+		this->h == NULL;
+		this->t == NULL;
+		return dato;
+	}
+	Nodo *n = this->h;
+	while (n->getNext() != this->t)
+	{
+		n = n->getNext();
+	}
+	this->t = n;
+	this->t->setNext(this->h);
+	return dato;
+}
