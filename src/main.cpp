@@ -1,3 +1,7 @@
+/**
+ *	Autor: Daniel Ponce de León Súchil
+ */
+
 #include <iostream>
 #include "ListaCircular.h"
 using namespace std;

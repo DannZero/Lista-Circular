@@ -1,4 +1,6 @@
-
+/**
+ *	Autor: Daniel Ponce de León Súchil
+ */
 
 #include "ListaCircular.h"
 using namespace std;
@@ -19,6 +21,16 @@ ListaCircular::ListaCircular(int dato)
 bool ListaCircular::isEmpty()
 {
 	return (this->h == NULL && this->t = NULL);
+}
+
+bool ListaCircular::vaciar()
+{
+	Nodo *aux = h;
+	while (!this->t->getNext() == NULL)
+	{
+		h = NULL;
+		h = aux->getNext();
+	}
 }
 
 void ListaCircular::show()

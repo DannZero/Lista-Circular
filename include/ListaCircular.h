@@ -1,3 +1,7 @@
+/**
+ *	Autor: Daniel Ponce de León Súchil
+ */
+
 #include "Nodo.h"
 
 class ListaCircular
@@ -6,6 +10,7 @@ public:
 	ListaCircular();
 	ListaCircular(int dato);
 	bool isEmpty();
+	bool vaciar();
 	void show();
 	//Add y pop
 	void addInicio(int dato);

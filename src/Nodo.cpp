@@ -1,3 +1,7 @@
+/**
+ *	Autor: Daniel Ponce de León Súchil
+ */
+
 #include "Nodo.h"
 
 Nodo::Nodo(int dato)

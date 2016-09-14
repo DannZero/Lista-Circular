@@ -1,3 +1,7 @@
+/**
+ *	Autor: Daniel Ponce de León Súchil
+ */
+
 class Nodo
 {
 public:
