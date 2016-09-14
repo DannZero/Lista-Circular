@@ -4,7 +4,8 @@ using namespace std;
 
 int main()
 {
-    int opc;
+    int opc, a, b;
+    ListaCircular l = ListaCircular();
     do
     {
         cout << "1. addInicio" << endl;
@@ -19,30 +20,40 @@ int main()
         switch (opc)
         {
         case 1:
-            //
+            cout << "Ingrese el dato: ";
+            cin >> a;
+            l.addInicio(a);
             break;
         case 2:
-            //
+            cout << "Ingrese el dato: ";
+            cin >> a;
+            l.addFinal(a);
             break;
         case 3:
-            //
+            cout << "Ingrese el dato: ";
+            cin >> a;
+            cout << "Ingrese la referencia (comienza en 0): ";
+            cin >> b;
+            l.addAt(a, b);
             break;
         case 4:
-            //
+            cout << l.popInicio() << endl;
             break;
         case 5:
-            //
+            cout << l.popFinal() << endl;
             break;
         case 6:
-            //
+            cout << "Ingrese la referencia (comienza en 0): ";
+            cin >> a;
+            l.popAt(a);
             break;
-        case 7;
-            //
+        case 7:
+            l.show();
             break;
         case 0:
             break;
         default:
-            cout << "Opcion invalida." << endl;
+            cout << "Opción inválida." << endl;
         }
     } while (opc != 0);
     return 0;

@@ -6,6 +6,7 @@ public:
 	ListaCircular();
 	ListaCircular(int dato);
 	bool isEmpty();
+	void show();
 	//Add y pop
 	void addInicio(int dato);
 	void addFinal(int dato);

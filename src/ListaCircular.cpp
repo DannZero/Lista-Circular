@@ -1,4 +1,7 @@
+
+
 #include "ListaCircular.h"
+using namespace std;
 
 ListaCircular::ListaCircular()
 {
@@ -18,6 +21,20 @@ bool ListaCircular::isEmpty()
 	return (this->h == NULL && this->t = NULL);
 }
 
+void ListaCircular::show()
+{
+	if (this->isEmpty())
+	{
+		cout << "La lista está vacía." << endl;
+		return;
+	}
+	for (Nodo *aux = this->h ; aux != this->t ; aux = aux->getNext())
+	{
+		cout << aux->getDato() << endl;
+	}
+	cout << aux->getDato() << endl;
+}
+
 void ListaCircular::addInicio(int dato)
 {
 	Nodo *n = new Nodo(dato);
@@ -32,7 +49,7 @@ void ListaCircular::addInicio(int dato)
 void ListaCircular::addFinal(int dato)
 {
 	Nodo *n = new Nodo(dato);
-	if(isEmpty())
+	if(this->isEmpty())
 	{
 		this->h = n;
 	}
@@ -44,22 +61,23 @@ void ListaCircular::addFinal(int dato)
 	this->t->setSig(h);
 }
 
-/*	Agrega el dato en la posición -ref-
-	(El primer elemento es -lista[0]-)
-	Si la lista contiene menos elementos que ref,
-	el dato se agrega al final.
+/**
+ *	Agrega el dato en la posición -ref-
+ *	(El primer elemento es -lista[0]-)
+ *	Si la lista contiene menos elementos que ref,
+ *	el dato se agrega al final.
  */
 void ListaCircular::addAt(int dato, int ref)
 {
-	if (!this.isEmpty())
+	if (!this->isEmpty())
 	{
 		Nodo *aux = this->h;
 		for (int i = 0; i < (ref - 1) ; ++i)
 		{
-			if (aux->getNext() == this->t || aux->getNext() == NULL)
+			if (aux->getNext() == this->t || aux->getNext() == this->h)
 			{
-				std::cout << "El tamaño de la lista es menor, se agregará al final..." << std:endl;
-				ListaCircular::addFinal(dato);
+				cout << "El tamaño de la lista es menor, se agregará al final..." << std:endl;
+				this.addFinal(dato);
 				return;
 			}
 			aux = aux->getNext();
@@ -68,5 +86,15 @@ void ListaCircular::addAt(int dato, int ref)
 		aux->setNext(n);
 		return;
 	}
-	std::cout << "La lista está vacía, se agregará el dato al inicio..." << std::endl;
+	cout << "La lista está vacía, se agregará el dato al inicio..." << endl;
+	this.addInicio(dato);
+}
+
+int ListaCircular::popInicio()
+{
+	if (this->isEmpty())
+	{
+		cout << "La lista está vacía." << endl;
+		return NULL;
+	}
 }
