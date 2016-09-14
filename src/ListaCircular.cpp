@@ -25,12 +25,8 @@ bool ListaCircular::isEmpty()
 
 bool ListaCircular::vaciar()
 {
-	Nodo *aux = h;
-	while (!this->t->getNext() == 0)
-	{
-		h = NULL;
-		h = aux->getNext();
-	}
+	this->h = NULL;
+	this->t = NULL;
 }
 
 void ListaCircular::show()
@@ -40,22 +36,23 @@ void ListaCircular::show()
 		cout << "La lista está vacía." << endl;
 		return;
 	}
+	cout << "[ ";
 	for (Nodo *aux = this->h ; aux != this->t ; aux = aux->getNext())
 	{
-		cout << aux->getDato() << endl;
+		cout << aux->getDato() << " , ";
 	}
-	cout << this->t->getDato() << endl;
+	cout << this->t->getDato() << " ]" << endl;
 }
 
 void ListaCircular::addInicio(int dato)
 {
-	Nodo *n = new Nodo(dato);
+	Nodo *n = new Nodo(dato, this->h);
 	if (this->isEmpty())
 	{
 		this->t = n;
 	}
 	this->h = n;
-	this->t->setNext(h);
+	this->t->setNext(this->h);
 }
 
 void ListaCircular::addFinal(int dato)
@@ -74,13 +71,25 @@ void ListaCircular::addFinal(int dato)
 }
 
 /**
- *	Agrega el dato en la posición -ref-
- *	(El primer elemento es -lista[0]-)
- *	Si la lista contiene menos elementos que ref,
- *	el dato se agrega al final.
+ *	Agrega el dato en la posición -ref-, recorriendo
+ *	todos los posteriores.
+ *
+ *	El primer elemento es lista[0].
+ *
+ *	Si la lista contiene menos elementos que ref, el
+ *	dato se agrega al final.
  */
 void ListaCircular::addAt(int dato, int ref)
 {
+	if (ref <= 0)
+	{
+		if (ref < 0)
+		{
+			cout << "Referencia inválida, agregando al inicio..." << endl;
+		}
+		addInicio(dato);
+		return;
+	}
 	if (!this->isEmpty())
 	{
 		Nodo *aux = this->h;
@@ -110,8 +119,16 @@ int ListaCircular::popInicio()
 		return 0;
 	}
 	int dato = this->h->getDato();
-	this->h = this->h->getNext();
-	this->t->setNext(this->h);
+	if (this->h == this->t)
+	{
+		this->h == NULL;
+		this->t == NULL;
+	}
+	else
+	{
+		this->h = this->h->getNext();
+		this->t->setNext(this->h);
+	}
 	return dato;
 }
 
@@ -137,4 +154,82 @@ int ListaCircular::popFinal()
 	this->t = n;
 	this->t->setNext(this->h);
 	return dato;
+}
+
+/**
+ *	Regresa el dato en la posición -ref- ,eliminandolo
+ *	y recorriendo los posteriores hacia atrás.
+ *
+ *	El primer elemento es lista[0].
+ *
+ *	Si -ref- es mayor al tamaño de la lista, no se hace
+ *	nada.
+ */
+int ListaCircular::popAt(int ref)
+{
+	if (ref <= 0)
+	{
+		if (ref < 0)
+		{
+			cout << "Referencia inválida, retirando al inicio..." << endl;
+		}
+		return popInicio();
+	}
+	if (this->isEmpty())
+	{
+		cout << "La lista está vacía." << endl;
+		return 0;
+	}
+	Nodo *n = this->h;
+	for (int i = 0 ; i < (ref - 1) ; ++i)
+	{
+		if (n->getNext() == this->t || n->getNext() == this->h)
+			{
+				cout << "El tamaño de la lista es menor, se eliminará el último elemento..." << endl;
+				return popFinal();
+			}
+		n = n->getNext();
+	}
+	int dato = n->getNext()->getDato();
+	if (n->getNext() == this->t)
+	{
+		this->t = n;
+		this->t->setNext(this->h);
+	}
+	else
+	{
+		n->setNext(n->getNext()->getNext());
+	}
+	return dato;
+}
+
+Nodo *ListaCircular::getElement(int dato)
+{
+	if (this->isEmpty())
+	{
+		cout << "La lista está vacía." << endl;
+		return NULL;
+	}
+	Nodo *n = this->h;
+	while (n->getDato() != dato && n->getNext() != this->h)
+	{
+		n = n->getNext();
+	}
+	if (n->getDato() == dato)
+	{
+		return n;
+	}
+	//Si n.dato != dato y n == t, entonces no se encontró
+	cout << "No existe el elemento." << endl;
+	return NULL;
+}
+
+Nodo *ListaCircular::getH()
+{
+	return this->h;
+}
+
+Nodo *ListaCircular::getT()
+{
+	return this->t;
 }

@@ -14,10 +14,12 @@ int main()
         cout << "1. addInicio" << endl;
         cout << "2. addFinal" << endl;
         cout << "3. addAt" << endl;
-        cout << "4. removeInicio" << endl;
-        cout << "5. removeFinal" << endl;
-        cout << "6. removeAt" << endl;
-        cout << "7. show" << endl << endl;
+        cout << "4. popInicio" << endl;
+        cout << "5. popFinal" << endl;
+        cout << "6. popAt" << endl;
+        cout << "7. vaciar" << endl;
+        cout << "8. getElement" << endl;
+        cout << "9. show" << endl << endl;
         cout << "0. Salir del Programa..." << endl;
         cin >> opc;
         switch (opc)
@@ -51,6 +53,14 @@ int main()
             l.popAt(a);
             break;
         case 7:
+            l.vaciar();
+            break;
+        case 8:
+            cout << "Ingrese el dato del nodo a obtener: ";
+            cin >> a;
+            cout << "Nodo obtenido: " << l.getElement(a) << endl;
+            break;
+        case 9:
             l.show();
             break;
         case 0:

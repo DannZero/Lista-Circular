@@ -20,12 +20,10 @@ public:
 	int popFinal();
 	int popAt(int ref);
 	//Busqueda
-	Nodo *hasElement(int dato);
+	Nodo *getElement(int dato);
 	//Getters y setters
 	Nodo *getH();
 	Nodo *getT();
-	void setH(Nodo *h);
-	void setT(Nodo *T);
 
 private:
 	Nodo *h;
