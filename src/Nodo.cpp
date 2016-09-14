@@ -3,7 +3,7 @@
 Nodo::Nodo(int dato)
 {
 	this->dato = dato;
-	this->next = NULL;
+	this->next = Null;
 }
 
 Nodo::Nodo(int dato, Nodo *next)

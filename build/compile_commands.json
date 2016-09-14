@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/daniel/Documentos/Algoritmos y Estructuras de Datos/ListaCircular/build",
+  "command": "/usr/bin/c++    -I\"/home/daniel/Documentos/Algoritmos y Estructuras de Datos/ListaCircular/include\"    -o CMakeFiles/ListaCircular.dir/src/Nodo.cpp.o -c \"/home/daniel/Documentos/Algoritmos y Estructuras de Datos/ListaCircular/src/Nodo.cpp\"",
+  "file": "/home/daniel/Documentos/Algoritmos y Estructuras de Datos/ListaCircular/src/Nodo.cpp"
+},
+{
+  "directory": "/home/daniel/Documentos/Algoritmos y Estructuras de Datos/ListaCircular/build",
+  "command": "/usr/bin/c++    -I\"/home/daniel/Documentos/Algoritmos y Estructuras de Datos/ListaCircular/include\"    -o CMakeFiles/ListaCircular.dir/src/main.cpp.o -c \"/home/daniel/Documentos/Algoritmos y Estructuras de Datos/ListaCircular/src/main.cpp\"",
+  "file": "/home/daniel/Documentos/Algoritmos y Estructuras de Datos/ListaCircular/src/main.cpp"
+},
+{
+  "directory": "/home/daniel/Documentos/Algoritmos y Estructuras de Datos/ListaCircular/build",
+  "command": "/usr/bin/c++    -I\"/home/daniel/Documentos/Algoritmos y Estructuras de Datos/ListaCircular/include\"    -o CMakeFiles/ListaCircular.dir/src/ListaCircular.cpp.o -c \"/home/daniel/Documentos/Algoritmos y Estructuras de Datos/ListaCircular/src/ListaCircular.cpp\"",
+  "file": "/home/daniel/Documentos/Algoritmos y Estructuras de Datos/ListaCircular/src/ListaCircular.cpp"
+}
+]

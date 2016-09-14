@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/ListaCircular.h
+Nodo.h
+../include/Nodo.h
+
+../include/Nodo.h
+
+/home/daniel/Documentos/Algoritmos y Estructuras de Datos/ListaCircular/src/ListaCircular.cpp
+ListaCircular.h
+/home/daniel/Documentos/Algoritmos y Estructuras de Datos/ListaCircular/src/ListaCircular.h
+
+/home/daniel/Documentos/Algoritmos y Estructuras de Datos/ListaCircular/src/Nodo.cpp
+Nodo.h
+/home/daniel/Documentos/Algoritmos y Estructuras de Datos/ListaCircular/src/Nodo.h
+
+/home/daniel/Documentos/Algoritmos y Estructuras de Datos/ListaCircular/src/main.cpp
+iostream
+-
+ListaCircular.h
+/home/daniel/Documentos/Algoritmos y Estructuras de Datos/ListaCircular/src/ListaCircular.h
+

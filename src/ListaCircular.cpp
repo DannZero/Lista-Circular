@@ -21,18 +21,18 @@ bool ListaCircular::isEmpty()
 void ListaCircular::addInicio(int dato)
 {
 	Nodo *n = new Nodo(dato);
-	if (this.isEmpty())
+	if (this->isEmpty())
 	{
 		this->t = n;
 	}
 	this->h = n;
-	this->t->setSig(h);
+	this->t->setNext(h);
 }
 
 void ListaCircular::addFinal(int dato)
 {
 	Nodo *n = new Nodo(dato);
-	if(this.isEmpty())
+	if(isEmpty())
 	{
 		this->h = n;
 	}
@@ -65,6 +65,8 @@ void ListaCircular::addAt(int dato, int ref)
 			aux = aux->getNext();
 		}
 		Nodo *n = new Nodo(dato, aux->getNext());
-		aux->setSig(n);
+		aux->setNext(n);
+		return;
 	}
+	std::cout << "La lista está vacía, se agregará el dato al inicio..." << std::endl;
 }
