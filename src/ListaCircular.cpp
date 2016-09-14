@@ -109,4 +109,8 @@ int ListaCircular::popInicio()
 		cout << "La lista está vacía." << endl;
 		return 0;
 	}
+	int dato = this->h->getDato();
+	this->h = this->h->getNext();
+	this->t->setNext(this->h);
+	return dato;
 }
